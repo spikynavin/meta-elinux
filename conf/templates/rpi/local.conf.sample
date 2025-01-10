@@ -36,5 +36,7 @@ PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
 WIFI_SSID = "test"
 WIFI_PASSWD = "test"
 
+BBMASK += "meta-elinux/recipes-connectivity/wpa-supplicant/wpa-supplicant_%.bbappend"
+
 LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 CONF_VERSION = "2"
