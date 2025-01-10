@@ -10,7 +10,7 @@ EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
 USER_CLASSES ?= "buildstats"
 PATCHRESOLVE = "noop"
 
-DISTRO_FEATURES:append = " systemd usrmerge wifi bluez5"
+DISTRO_FEATURES:append = " rauc systemd usrmerge wifi bluez5 security selinux virtualization"
 DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"
@@ -22,6 +22,8 @@ SDIMG_ROOTFS_TYPE = "ext4"
 ENABLE_UART = "1" 
 RPI_USE_U_BOOT = "1" 
 PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
+WKS_FILE = "sdimage-dual-raspberrypi.wks.in"
+QBEE_BOOTSTRAP_KEY = "RPWqnUzX6ucYB9emGFdpRNx2FHF6pN2pxOoWpWD1LfnnDoWzJNLk5UBetFFeUOHT"
 
 BB_DISKMON_DIRS ??= "\
     STOPTASKS,${TMPDIR},1G,100K \
@@ -37,5 +39,7 @@ WIFI_SSID ?= "None"
 WIFI_PASSWD ?= "None"
 
 PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
+
 CONF_VERSION = "2"
+
 LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
