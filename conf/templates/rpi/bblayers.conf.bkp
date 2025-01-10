@@ -16,5 +16,13 @@ BBLAYERS ?= " \
   ##OEROOT##/../meta-openembedded/meta-networking \
   ##OEROOT##/../meta-openembedded/meta-perl \
   ##OEROOT##/../meta-raspberrypi \
+  ##OEROOT##/../meta-rauc \
+  ##OEROOT##/../meta-rauc-community/meta-rauc-raspberrypi \
+  ##OEROOT##/../meta-lts-mixins \
+  ##OEROOT##/../meta-qbee/meta-qbee \
   ##OEROOT##/../meta-elinux \
+  ##OEROOT##/../meta-virtualization \
+  ##OEROOT##/../meta-security \
+  ##OEROOT##/../meta-selinux \
+  ##OEROOT##/../meta-clang \
   "
