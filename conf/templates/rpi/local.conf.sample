@@ -15,8 +15,6 @@ DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"
 
-DISTRO_FEATURES += "rauc"
-IMAGE_INSTALL:append = " rauc"
 IMAGE_FSTYPES = "tar.bz2 ext4 wic.bz2 wic.bmap"
 SDIMG_ROOTFS_TYPE = "ext4"
 ENABLE_UART = "1" 
@@ -33,9 +31,10 @@ BB_DISKMON_DIRS ??= "\
     HALT,${SSTATE_DIR},100M,1K \
     HALT,/tmp,10M,1K"
 
-WIFI_SSID ?= "None"
-WIFI_PASSWD ?= "None"
-
 PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
-CONF_VERSION = "2"
+
+WIFI_SSID = "test"
+WIFI_PASSWD = "test"
+
 LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
+CONF_VERSION = "2"

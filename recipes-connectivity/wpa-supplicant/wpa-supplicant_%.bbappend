@@ -1,6 +1,6 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-inherit wifi_passwd
+inherit enc_passwd
 
 do_install:append() {
    install -d ${D}${sysconfdir}/wpa_supplicant
@@ -11,8 +11,8 @@ do_install:append() {
    echo "country=IN" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
    echo "network={" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
    echo "   scan_ssid=1" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
-   echo "   ssid=\"${WIFI_SSID}\"" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
-   echo "   psk=\"${WIFI_PASSWD}\"" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
+   echo "   ssid=\"${WIFI_SSID_DECODED}\"" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
+   echo "   psk=\"${WIFI_PASSWD_DECODED}\"" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
    echo "   key_mgmt=WPA-PSK" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
    echo "}" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf   
 }

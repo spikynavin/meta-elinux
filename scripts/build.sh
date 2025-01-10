@@ -107,9 +107,11 @@ function connectivity_setup()
 	case ${wifi_opt} in
 		y | yes | Y | Yes)
 			read -rep $'\nEnter a wifi ssid name: ' ssid
-			export WIFI_SSID=$ssid
+			enc_ssid=$(echo $ssid | base64)
+			export WIFI_SSID=$enc_ssid
 			read -rep $'\nEnter a wifi password: ' psk
-			export WIFI_PASSWD=$psk
+			enc_psk=$(echo $psk | base64)
+			export WIFI_PASSWD=$enc_psk
 			;;
 		n | no | N | No)
                         export WIFI_SSID="None"

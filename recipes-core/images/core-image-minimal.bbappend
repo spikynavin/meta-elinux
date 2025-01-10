@@ -13,8 +13,6 @@ CORE_IMAGE_EXTRA_INSTALL:append = " \
    ${NETWORK_UTILES_PKG} \
    ${GNU_TOOLS_PKG} \
    ${RPI_UTILES_PKG} \
-   ${DOCKER_PKG} \
-   ${OTA_PKG} \
 "
 
 RPI_UTILES_PKG = " \
@@ -47,11 +45,11 @@ NETWORK_UTILES_PKG = " \
    hostapd \
    iptables \
    wpa-supplicant \
+   tcpdump \
    iperf2 \
    iperf3 \
    iw \
    net-tools \
-   tcpdump \
    dhcpcd \
    bridge-utils \
 "
@@ -61,12 +59,4 @@ GNU_TOOLS_PKG = " \
    make \
    autoconf \
    automake \
-"
-
-DOCKER_PKG = " \
-   docker-ce \
-"
-
-OTA_PKG = " \
-   rauc \
 "
