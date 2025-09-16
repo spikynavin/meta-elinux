@@ -1,2 +1,17 @@
-FIXME: Please place here the detailed instructions for using this build configuration.
-They will be shown to the users when they set up their builds via TEMPLATECONF.
+Meta-elinux layer for Raspberry Pi build configuration
+
+This template configuration provides a complete Yocto build environment for Raspberry Pi boards.
+
+Usage:
+1. Set up the build environment using the provided build script:
+   source scripts/build.sh --fresh
+
+2. The configuration includes:
+   - Custom core-image-minimal with additional packages for embedded development
+   - WiFi configuration with encrypted password support
+   - Python3 development environment
+   - GPIO and hardware interface tools
+   - Network utilities and development tools
+
+3. Supported machines: raspberrypi4, raspberrypi5, and other RPi variants
+4. Compatible with Yocto scarthgap and kirkstone releases

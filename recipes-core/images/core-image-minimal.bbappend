@@ -28,6 +28,7 @@ RPI_UTILES_PKG = " \
 "
 
 PYTHON_PKG = " \
+   python3-core \
    python3 \
    python3-pip \
 "

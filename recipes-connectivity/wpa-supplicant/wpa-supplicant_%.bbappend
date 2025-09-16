@@ -8,7 +8,7 @@ do_install:append() {
    echo "ctrl_interface=/var/run/wpa_supplicant" > ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
    echo "ctrl_interface_group=0" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
    echo "update_config=1" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
-   echo "country=IN" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
+   echo "country=${WIFI_COUNTRY}" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
    echo "network={" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
    echo "   scan_ssid=1" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf
    echo "   ssid=\"${WIFI_SSID_DECODED}\"" >> ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant.conf

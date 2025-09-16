@@ -1,2 +1,3 @@
-FIXME: Please place here the short summary of what this build configuration is for.
-It will be shown to the users when they set up their builds via TEMPLATECONF.
+Raspberry Pi Embedded Linux Build Configuration
+
+This build configuration creates a custom embedded Linux image for Raspberry Pi with development tools, WiFi support, and hardware interface utilities.

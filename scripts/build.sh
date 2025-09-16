@@ -22,7 +22,7 @@ function clean_up()
 {
 	unset NCPU CWD TEMPLATES SHORTOPTS LONGOPTS ARGS MIRRORS CODENAME
 	unset MACHINE DISTRO TEMPLATECONF PROGNAME BB_GENERATE_MIRROR_TARBALLS
-	unset SOURCE WIFI_SSID WIFI_PASSWD
+	unset SOURCE WIFI_SSID WIFI_PASSWD WIFI_COUNTRY
 }
 
 function machine_conf_select()
@@ -112,10 +112,13 @@ function connectivity_setup()
 			read -rep $'\nEnter a wifi password: ' psk
 			enc_psk=$(echo $psk | base64)
 			export WIFI_PASSWD=$enc_psk
+			read -rep $'\nEnter wifi country code [IN]: ' country
+			export WIFI_COUNTRY=${country:-IN}
 			;;
 		n | no | N | No)
                         export WIFI_SSID="None"
 			export WIFI_PASSWD="None"
+			export WIFI_COUNTRY="IN"
 			;;
 	esac
 }

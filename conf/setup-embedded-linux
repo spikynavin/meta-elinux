@@ -25,7 +25,7 @@ clean_up()
 {
 	unset NCPU CWD TEMPLATES SHORTOPTS LONGOPTS ARGS PROGNAME
 	unset MACHINE DISTRO OEROOT PROJECT TEMPLATECONF MIRRORS
-	unset SOURCE CODENAME WIFI_SSID WIFI_PASSWD
+	unset SOURCE CODENAME WIFI_SSID WIFI_PASSWD WIFI_COUNTRY
 }
 
 SHORTOPTS="h"
@@ -73,6 +73,7 @@ if [ "${MACHINE}" != "" ];then
 fi
 
 DISTRO=${DISTRO-'poky'}
+WIFI_COUNTRY=${WIFI_COUNTRY-'IN'}
 
 export BB_ENV_PASSTHROUGH_ADDITIONS="${BB_ENV_PASSTHROUGH_ADDITIONS}"
 
@@ -97,6 +98,7 @@ sed -r -e "s,MACHINE \?*=.*,MACHINE ?= \"${MACHINE}\",g" \
 	-e "s,DISTRO \?*=.*,DISTRO ?= \"${DISTRO}\",g" \
 	-e "s,WIFI_SSID \?*=.*,WIFI_SSID ?= \"${WIFI_SSID}\",g" \
 	-e "s,WIFI_PASSWD \?*=.*,WIFI_PASSWD ?= \"${WIFI_PASSWD}\",g" \
+	-e "s,WIFI_COUNTRY \?*=.*,WIFI_COUNTRY ?= \"${WIFI_COUNTRY}\",g" \
 	-i conf/local.conf
 
 if [ $? == 1 ];then

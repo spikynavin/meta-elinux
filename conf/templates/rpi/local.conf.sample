@@ -35,6 +35,7 @@ PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
 
 WIFI_SSID = "test"
 WIFI_PASSWD = "test"
+WIFI_COUNTRY = "IN"
 
 LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 CONF_VERSION = "2"
